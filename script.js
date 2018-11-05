@@ -41,13 +41,13 @@ function setup() {
              {
                 if (main2[i].search("WW") == 0){
                  var option2 = document.createElement("OPTION"),
-                     txt2 = document.createTextNode(main2[i]);
+                     txt2 = document.createTextNode(main2[i].replace(".txt",""));
                  option2.appendChild(txt2);
-                 option2.setAttribute("value",main2[i]);
+                 option2.setAttribute("value",main2[i].replace(".txt",""));
                  select2.insertBefore(option2,select2.lastChild);
                  }
                  else{
-                    console.log(main2[i]);
+                    console.log(main2[i].replace(".txt",""));
                  }
              }
 }
@@ -90,6 +90,7 @@ function openData(evt, tabMenu) {
     //document.getElementById(tabMenu).style.display = "block";
     var selectedValue = document.getElementById("select").value;
     var selectedValue2 = document.getElementById("select2").value;
+    //selectedValue2 = selectedValue2.replace(".txt","");
     var FTempPath = "SaturnHD/" + selectedValue + "/" + selectedValue2 + ".txt"
     console.log(FTempPath)
 
